@@ -3,30 +3,21 @@ package Model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the "ROLE" database table.
- * 
- */
-@Entity
-@Table(name="\"ROLE\"")
-@NamedQuery(name="Role.findAll", query="SELECT r FROM Role r")
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long idr;
+	private int idr;
 
 	private String name;
 
 	public Role() {
 	}
 
-	public long getIdr() {
+	public int getIdr() {
 		return this.idr;
 	}
 
-	public void setIdr(long idr) {
+	public void setIdr(int idr) {
 		this.idr = idr;
 	}
 

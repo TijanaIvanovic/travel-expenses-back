@@ -5,42 +5,28 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-
-/**
- * The persistent class for the DESTINATION database table.
- * 
- */
-@Entity
-@NamedQuery(name="Destination.findAll", query="SELECT d FROM Destination d")
 public class Destination implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long idd;
+	private int idd;
 
 	private String city;
 
-	private BigDecimal price;
+	private DestinationWage iddw;
 
-	private BigDecimal zipcode;
+	private double zipcode;
 
-	//bi-directional many-to-one association to Busineestrip
-	@OneToMany(mappedBy="destination")
-	private List<Busineestrip> busineestrips;
+	private List<BusinessTrip> businesstrips;
 
-	//bi-directional many-to-one association to Price
-	@ManyToOne
-	@JoinColumn(name="PRICE_IDP")
-	private Price priceBean;
 
 	public Destination() {
 	}
 
-	public long getIdd() {
+	public int getIdd() {
 		return this.idd;
 	}
 
-	public void setIdd(long idd) {
+	public void setIdd(int idd) {
 		this.idd = idd;
 	}
 
@@ -52,50 +38,32 @@ public class Destination implements Serializable {
 		this.city = city;
 	}
 
-	public BigDecimal getPrice() {
-		return this.price;
-	}
-
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
-	public BigDecimal getZipcode() {
+	public double getZipcode() {
 		return this.zipcode;
 	}
 
-	public void setZipcode(BigDecimal zipcode) {
+	public void setZipcode(double zipcode) {
 		this.zipcode = zipcode;
 	}
 
-	public List<Busineestrip> getBusineestrips() {
-		return this.busineestrips;
+	public List<BusinessTrip> getBusinesstrips() {
+		return this.businesstrips;
 	}
 
-	public void setBusineestrips(List<Busineestrip> busineestrips) {
-		this.busineestrips = busineestrips;
+	public void setBusinesstrips(List<BusinessTrip> businesstrips) {
+		this.businesstrips = businesstrips;
 	}
 
-	public Busineestrip addBusineestrip(Busineestrip busineestrip) {
-		getBusineestrips().add(busineestrip);
-		busineestrip.setDestination(this);
-
-		return busineestrip;
+	
+	public DestinationWage getIddw() {
+		return iddw;
 	}
 
-	public Busineestrip removeBusineestrip(Busineestrip busineestrip) {
-		getBusineestrips().remove(busineestrip);
-		busineestrip.setDestination(null);
-
-		return busineestrip;
+	public void setIddw(DestinationWage iddw) {
+		this.iddw = iddw;
 	}
+	
+	
 
-	public Price getPriceBean() {
-		return this.priceBean;
-	}
-
-	public void setPriceBean(Price priceBean) {
-		this.priceBean = priceBean;
-	}
 
 }

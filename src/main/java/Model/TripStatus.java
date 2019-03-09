@@ -4,33 +4,23 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
-/**
- * The persistent class for the TRIPSTATUS database table.
- * 
- */
-@Entity
-@NamedQuery(name="Tripstatus.findAll", query="SELECT t FROM Tripstatus t")
-public class Tripstatus implements Serializable {
+public class TripStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long idts;
+	private int idts;
 
 	private String name;
 
-	//bi-directional many-to-one association to Busineestrip
-	@OneToMany(mappedBy="tripstatus")
-	private List<Busineestrip> busineestrips;
+	private List<BusinessTrip> businesstrips;
 
-	public Tripstatus() {
+	public TripStatus() {
 	}
 
-	public long getIdts() {
+	public int getIdts() {
 		return this.idts;
 	}
 
-	public void setIdts(long idts) {
+	public void setIdts(int idts) {
 		this.idts = idts;
 	}
 
@@ -42,26 +32,13 @@ public class Tripstatus implements Serializable {
 		this.name = name;
 	}
 
-	public List<Busineestrip> getBusineestrips() {
-		return this.busineestrips;
+	public List<BusinessTrip> getBusinesstrips() {
+		return this.businesstrips;
 	}
 
-	public void setBusineestrips(List<Busineestrip> busineestrips) {
-		this.busineestrips = busineestrips;
+	public void setBusinesstrips(List<BusinessTrip> businesstrips) {
+		this.businesstrips = businesstrips;
 	}
 
-	public Busineestrip addBusineestrip(Busineestrip busineestrip) {
-		getBusineestrips().add(busineestrip);
-		busineestrip.setTripstatus(this);
-
-		return busineestrip;
-	}
-
-	public Busineestrip removeBusineestrip(Busineestrip busineestrip) {
-		getBusineestrips().remove(busineestrip);
-		busineestrip.setTripstatus(null);
-
-		return busineestrip;
-	}
 
 }

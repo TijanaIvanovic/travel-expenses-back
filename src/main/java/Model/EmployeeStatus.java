@@ -4,28 +4,21 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-/**
- * The persistent class for the EMPLOYEESTATUS database table.
- * 
- */
-@Entity
-@NamedQuery(name="Employeestatus.findAll", query="SELECT e FROM Employeestatus e")
-public class Employeestatus implements Serializable {
+public class EmployeeStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long ides;
+	private int ides;
 
 	private String name;
 
-	public Employeestatus() {
+	public EmployeeStatus() {
 	}
 
-	public long getIdes() {
+	public int getIdes() {
 		return this.ides;
 	}
 
-	public void setIdes(long ides) {
+	public void setIdes(int ides) {
 		this.ides = ides;
 	}
 

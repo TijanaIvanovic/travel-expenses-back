@@ -5,50 +5,35 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-
-/**
- * The persistent class for the EMPLOYEE database table.
- * 
- */
-@Entity
-@NamedQuery(name="Employee.findAll", query="SELECT e FROM Employee e")
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long ide;
+	private int ide;
 
 	private String email;
 
-	@Column(name="EMPLOYEESTATUS_IDES")
-	private BigDecimal employeestatusIdes;
+	private EmployeeStatus employeeStatus;
 
 	private String firstname;
 
 	private String lastname;
 
-	@Column(name="USER_IDU")
-	private BigDecimal userIdu;
+	private Users user;
 
-	@Column(name="USER_ROLE_IDR")
-	private BigDecimal userRoleIdr;
+	private Role role;
 
-	//bi-directional many-to-one association to Bill
-	@OneToMany(mappedBy="employee")
 	private List<Bill> bills;
 
-	//bi-directional many-to-one association to Tripofemployee
-	@OneToMany(mappedBy="employee")
-	private List<Tripofemployee> tripofemployees;
+	private List<TripOfEmployee> tripofemployees;
 
 	public Employee() {
 	}
 
-	public long getIde() {
+	public int getIde() {
 		return this.ide;
 	}
 
-	public void setIde(long ide) {
+	public void setIde(int ide) {
 		this.ide = ide;
 	}
 
@@ -60,13 +45,6 @@ public class Employee implements Serializable {
 		this.email = email;
 	}
 
-	public BigDecimal getEmployeestatusIdes() {
-		return this.employeestatusIdes;
-	}
-
-	public void setEmployeestatusIdes(BigDecimal employeestatusIdes) {
-		this.employeestatusIdes = employeestatusIdes;
-	}
 
 	public String getFirstname() {
 		return this.firstname;
@@ -84,21 +62,6 @@ public class Employee implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public BigDecimal getUserIdu() {
-		return this.userIdu;
-	}
-
-	public void setUserIdu(BigDecimal userIdu) {
-		this.userIdu = userIdu;
-	}
-
-	public BigDecimal getUserRoleIdr() {
-		return this.userRoleIdr;
-	}
-
-	public void setUserRoleIdr(BigDecimal userRoleIdr) {
-		this.userRoleIdr = userRoleIdr;
-	}
 
 	public List<Bill> getBills() {
 		return this.bills;
@@ -108,40 +71,38 @@ public class Employee implements Serializable {
 		this.bills = bills;
 	}
 
-	public Bill addBill(Bill bill) {
-		getBills().add(bill);
-		bill.setEmployee(this);
 
-		return bill;
-	}
-
-	public Bill removeBill(Bill bill) {
-		getBills().remove(bill);
-		bill.setEmployee(null);
-
-		return bill;
-	}
-
-	public List<Tripofemployee> getTripofemployees() {
+	public List<TripOfEmployee> getTripofemployees() {
 		return this.tripofemployees;
 	}
 
-	public void setTripofemployees(List<Tripofemployee> tripofemployees) {
+	public void setTripofemployees(List<TripOfEmployee> tripofemployees) {
 		this.tripofemployees = tripofemployees;
 	}
 
-	public Tripofemployee addTripofemployee(Tripofemployee tripofemployee) {
-		getTripofemployees().add(tripofemployee);
-		tripofemployee.setEmployee(this);
-
-		return tripofemployee;
+	public EmployeeStatus getEmployeeStatus() {
+		return employeeStatus;
 	}
 
-	public Tripofemployee removeTripofemployee(Tripofemployee tripofemployee) {
-		getTripofemployees().remove(tripofemployee);
-		tripofemployee.setEmployee(null);
-
-		return tripofemployee;
+	public void setEmployeeStatus(EmployeeStatus employeeStatus) {
+		this.employeeStatus = employeeStatus;
 	}
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 
 }

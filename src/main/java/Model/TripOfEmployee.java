@@ -3,43 +3,31 @@ package Model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the TRIPOFEMPLOYEE database table.
- * 
- */
-@Entity
-@NamedQuery(name="Tripofemployee.findAll", query="SELECT t FROM Tripofemployee t")
-public class Tripofemployee implements Serializable {
+public class TripOfEmployee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long idtoe;
+	private int idtoe;
 
-	//bi-directional many-to-one association to Busineestrip
-	@ManyToOne
-	private Busineestrip busineestrip;
+	private BusinessTrip busineestrip;
 
-	//bi-directional many-to-one association to Employee
-	@ManyToOne
 	private Employee employee;
 
-	public Tripofemployee() {
+	public TripOfEmployee() {
 	}
 
-	public long getIdtoe() {
+	public int getIdtoe() {
 		return this.idtoe;
 	}
 
-	public void setIdtoe(long idtoe) {
+	public void setIdtoe(int idtoe) {
 		this.idtoe = idtoe;
 	}
 
-	public Busineestrip getBusineestrip() {
+	public BusinessTrip getBusineestrip() {
 		return this.busineestrip;
 	}
 
-	public void setBusineestrip(Busineestrip busineestrip) {
+	public void setBusineestrip(BusinessTrip busineestrip) {
 		this.busineestrip = busineestrip;
 	}
 

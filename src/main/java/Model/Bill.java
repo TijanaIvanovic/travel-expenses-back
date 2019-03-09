@@ -5,59 +5,40 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-
-/**
- * The persistent class for the BILL database table.
- * 
- */
-@Entity
-@NamedQuery(name="Bill.findAll", query="SELECT b FROM Bill b")
 public class Bill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name="BILL_ID")
-	private long billId;
-
-	private BigDecimal total;
-
-	//bi-directional many-to-one association to Busineestrip
-	@ManyToOne
-	private Busineestrip busineestrip;
-
-	//bi-directional many-to-one association to Employee
-	@ManyToOne
+	private int billId;
+	private double total;
+	private BusinessTrip busineestrip;
 	private Employee employee;
-
-	//bi-directional many-to-one association to Billitem
-	@OneToMany(mappedBy="bill")
-	private List<Billitem> billitems;
+	private List<BillItem> BillItems;
 
 	public Bill() {
 	}
 
-	public long getBillId() {
+	public int getBillId() {
 		return this.billId;
 	}
 
-	public void setBillId(long billId) {
+	public void setBillId(int billId) {
 		this.billId = billId;
 	}
 
 
-	public BigDecimal getTotal() {
+	public double getTotal() {
 		return this.total;
 	}
 
-	public void setTotal(BigDecimal total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 
-	public Busineestrip getBusineestrip() {
+	public BusinessTrip getBusineestrip() {
 		return this.busineestrip;
 	}
 
-	public void setBusineestrip(Busineestrip busineestrip) {
+	public void setBusineestrip(BusinessTrip busineestrip) {
 		this.busineestrip = busineestrip;
 	}
 
@@ -69,26 +50,26 @@ public class Bill implements Serializable {
 		this.employee = employee;
 	}
 
-	public List<Billitem> getBillitems() {
-		return this.billitems;
+	public List<BillItem> getBillItems() {
+		return this.BillItems;
 	}
 
-	public void setBillitems(List<Billitem> billitems) {
-		this.billitems = billitems;
+	public void setBillItems(List<BillItem> BillItems) {
+		this.BillItems = BillItems;
 	}
 
-	public Billitem addBillitem(Billitem billitem) {
-		getBillitems().add(billitem);
-		billitem.setBill(this);
+	public BillItem addBillItem(BillItem BillItem) {
+		getBillItems().add(BillItem);
+		BillItem.setBill(this);
 
-		return billitem;
+		return BillItem;
 	}
 
-	public Billitem removeBillitem(Billitem billitem) {
-		getBillitems().remove(billitem);
-		billitem.setBill(null);
+	public BillItem removeBillItem(BillItem BillItem) {
+		getBillItems().remove(BillItem);
+		BillItem.setBill(null);
 
-		return billitem;
+		return BillItem;
 	}
 
 }

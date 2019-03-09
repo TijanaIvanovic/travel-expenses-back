@@ -4,43 +4,31 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-
-/**
- * The persistent class for the BILLITEM database table.
- * 
- */
-@Entity
-@NamedQuery(name="Billitem.findAll", query="SELECT b FROM Billitem b")
-public class Billitem implements Serializable {
+public class BillItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private long idbi;
-
-	private BigDecimal cost;
-
+	private int idbi;
+	private double cost;
 	private String name;
 
-	//bi-directional many-to-one association to Bill
-	@ManyToOne
 	private Bill bill;
 
-	public Billitem() {
+	public BillItem() {
 	}
 
-	public long getIdbi() {
+	public int getIdbi() {
 		return this.idbi;
 	}
 
-	public void setIdbi(long idbi) {
+	public void setIdbi(int idbi) {
 		this.idbi = idbi;
 	}
 
-	public BigDecimal getCost() {
+	public double getCost() {
 		return this.cost;
 	}
 
-	public void setCost(BigDecimal cost) {
+	public void setCost(double cost) {
 		this.cost = cost;
 	}
 
@@ -53,11 +41,15 @@ public class Billitem implements Serializable {
 	}
 
 	public Bill getBill() {
-		return this.bill;
+		return bill;
 	}
 
-	public void setBill(Bill bill) {
-		this.bill = bill;
+	public void setBill(Bill billid) {
+		this.bill = billid;
 	}
+
+	
+
+	
 
 }
