@@ -3,17 +3,29 @@ package Model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
 public class DestinationWage implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int iddw;
 	
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
+	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	
+	@ManyToOne
+	@JoinColumn(name="destination_idd")	
 	private Destination idd;
+	@ManyToOne
+	@JoinColumn(name="wage_idw")	
 	private Wage idw;
+	
 	public int getIddw() {
 		return iddw;
 	}

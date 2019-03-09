@@ -5,25 +5,36 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int ide;
 
 	private String email;
 
+	@ManyToOne
+	@JoinColumn(name="employeestatus_ides")
 	private EmployeeStatus employeeStatus;
 
 	private String firstname;
 
 	private String lastname;
 
+	@OneToOne
+	@JoinColumn(name="user_idu")
 	private Users user;
 
+	@OneToOne
+	@JoinColumn(name="user_role_idr")
 	private Role role;
 
+	@OneToMany(mappedBy="employee")
 	private List<Bill> bills;
 
+	@OneToMany(mappedBy="employee")
 	private List<TripOfEmployee> tripofemployees;
 
 	public Employee() {

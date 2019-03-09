@@ -6,21 +6,32 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class BusinessTrip implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int idbt;
 
+	@Temporal(TemporalType.DATE)
 	private Date enddate;
-
+	
+	@Temporal(TemporalType.DATE)
 	private Date startdate;
 
+	@OneToMany(mappedBy="businesstrip")
 	private List<Bill> bills;
 
+	@ManyToOne
+	@JoinColumn(name="destination_idd")
 	private Destination destination;
 
+	@ManyToOne
+	@JoinColumn(name="tripstatus_idts")
 	private TripStatus tripstatus;
 
+	@OneToMany(mappedBy="businesstrip")
 	private List<TripOfEmployee> tripofemployees;
 
 	public BusinessTrip() {

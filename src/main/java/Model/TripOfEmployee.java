@@ -3,13 +3,20 @@ package Model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+@Entity
 public class TripOfEmployee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int idtoe;
 
-	private BusinessTrip busineestrip;
+	@ManyToOne
+	@JoinColumn(name="businesstrip_idbt")
+	private BusinessTrip businesstrip;
 
+	@ManyToOne
+	@JoinColumn(name="employee_ide")
 	private Employee employee;
 
 	public TripOfEmployee() {
@@ -23,12 +30,12 @@ public class TripOfEmployee implements Serializable {
 		this.idtoe = idtoe;
 	}
 
-	public BusinessTrip getBusineestrip() {
-		return this.busineestrip;
+	public BusinessTrip getBusinesstrip() {
+		return this.businesstrip;
 	}
 
-	public void setBusineestrip(BusinessTrip busineestrip) {
-		this.busineestrip = busineestrip;
+	public void setBusinesstrip(BusinessTrip busineestrip) {
+		this.businesstrip = businesstrip;
 	}
 
 	public Employee getEmployee() {

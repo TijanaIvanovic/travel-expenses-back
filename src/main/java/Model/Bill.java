@@ -5,13 +5,20 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
 public class Bill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="BILL_ID")
 	private int billId;
+	@Column
 	private double total;
-	private BusinessTrip busineestrip;
-	private Employee employee;
+	@ManyToOne
+	@JoinColumn(name="businesstrip_idbt")
+	private BusinessTrip businesstrip;
+	@OneToMany(mappedBy="bill")
 	private List<BillItem> BillItems;
 
 	public Bill() {
@@ -34,21 +41,14 @@ public class Bill implements Serializable {
 		this.total = total;
 	}
 
-	public BusinessTrip getBusineestrip() {
-		return this.busineestrip;
+	public BusinessTrip getBusinesstrip() {
+		return this.businesstrip;
 	}
 
 	public void setBusineestrip(BusinessTrip busineestrip) {
-		this.busineestrip = busineestrip;
+		this.businesstrip = businesstrip;
 	}
 
-	public Employee getEmployee() {
-		return this.employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
 
 	public List<BillItem> getBillItems() {
 		return this.BillItems;
@@ -58,18 +58,5 @@ public class Bill implements Serializable {
 		this.BillItems = BillItems;
 	}
 
-	public BillItem addBillItem(BillItem BillItem) {
-		getBillItems().add(BillItem);
-		BillItem.setBill(this);
-
-		return BillItem;
-	}
-
-	public BillItem removeBillItem(BillItem BillItem) {
-		getBillItems().remove(BillItem);
-		BillItem.setBill(null);
-
-		return BillItem;
-	}
 
 }

@@ -4,13 +4,18 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
 public class BillItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int idbi;
 	private double cost;
 	private String name;
 
+	@ManyToOne
+	@JoinColumn(name="bill_bill_id")
 	private Bill bill;
 
 	public BillItem() {

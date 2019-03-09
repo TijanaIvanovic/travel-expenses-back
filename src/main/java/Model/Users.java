@@ -6,14 +6,19 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.sql.Timestamp;
 
+@Entity
 public class Users implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int idu;
 
 	private String username;
 	private String password;
 
+	@ManyToOne
+	@JoinColumn(name="role_idr")
 	private Role role;
 
 	public int getIdu() {

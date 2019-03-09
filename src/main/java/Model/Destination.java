@@ -5,17 +5,22 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
 public class Destination implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int idd;
 
 	private String city;
 
+	@OneToMany(mappedBy="destination")
 	private DestinationWage iddw;
 
 	private double zipcode;
 
+	@OneToMany(mappedBy="destination")
 	private List<BusinessTrip> businesstrips;
 
 
