@@ -1,5 +1,3 @@
-
-
 package Model;
 
 import java.io.Serializable;
@@ -13,28 +11,19 @@ public class Employee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDE")
 	private int ide;
 
 	private String email;
-
-	@ManyToOne
-	@JoinColumn(name="employeestatus_ides")
-	private EmployeeStatus employeeStatus;
 
 	private String firstname;
 
 	private String lastname;
 
-	@OneToOne
-	@JoinColumn(name="user_idu")
-	private Users user;
+	@ManyToOne
+	@JoinColumn(name="employeestatus_ides")
+	private EmployeeStatus employeeStatus;
 
-	@OneToOne
-	@JoinColumn(name="user_role_idr")
-	private Role role;
-
-	@OneToMany(mappedBy="employee")
-	private List<Bill> bills;
 
 	@OneToMany(mappedBy="employee")
 	private List<TripOfEmployee> tripofemployees;
@@ -76,15 +65,6 @@ public class Employee implements Serializable {
 	}
 
 
-	public List<Bill> getBills() {
-		return this.bills;
-	}
-
-	public void setBills(List<Bill> bills) {
-		this.bills = bills;
-	}
-
-
 	public List<TripOfEmployee> getTripofemployees() {
 		return this.tripofemployees;
 	}
@@ -101,28 +81,7 @@ public class Employee implements Serializable {
 		this.employeeStatus = employeeStatus;
 	}
 
-	public Users getUser() {
-		return user;
-	}
 
-	public void setUser(Users user) {
-		this.user = user;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [ide=" + ide + ", email=" + email + ", employeeStatus=" + employeeStatus + ", firstname="
-				+ firstname + ", lastname=" + lastname + ", user=" + user + ", role=" + role + ", bills=" + bills
-				+ ", tripofemployees=" + tripofemployees + "]";
-	}
 
 
 }

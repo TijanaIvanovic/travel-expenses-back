@@ -11,28 +11,29 @@ public class Bill implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	@Column(name="BILL_ID")
-	private int billId;
-	@Column
+	@Column(name="IDB")
+	private int idb;	
+	
 	private double total;
+	
 	@ManyToOne
 	@JoinColumn(name="businesstrip_idbt")
 	private BusinessTrip businesstrip;
+	
 	@OneToMany(mappedBy="bill")
 	private List<BillItem> BillItems;
 
 	public Bill() {
 	}
-
-	public int getBillId() {
-		return this.billId;
+	
+	public int getIdb() {
+		return idb;
 	}
-
-	public void setBillId(int billId) {
-		this.billId = billId;
+	
+	public void setIdb(int idb) {
+		this.idb = idb;
 	}
-
-
+	
 	public double getTotal() {
 		return this.total;
 	}

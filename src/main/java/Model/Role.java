@@ -1,6 +1,8 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,7 +11,11 @@ public class Role implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDR")
 	private int idr;
+	
+	@OneToMany(mappedBy="role")
+	private List<Users> users;
 
 	private String name;
 
@@ -31,5 +37,15 @@ public class Role implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<Users> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<Users> users) {
+		this.users = users;
+	}
+
+
 
 }

@@ -11,14 +11,17 @@ public class Destination implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDD")
+	
 	private int idd;
-
+	
 	private String city;
+	
+	private double zipcode;
 
 	@OneToMany(mappedBy="destination")
-	private DestinationWage iddw;
-
-	private double zipcode;
+	private List<DestinationWage> destinationwages;
+	
 
 	@OneToMany(mappedBy="destination")
 	private List<BusinessTrip> businesstrips;
@@ -59,14 +62,16 @@ public class Destination implements Serializable {
 		this.businesstrips = businesstrips;
 	}
 
-	
-	public DestinationWage getIddw() {
-		return iddw;
+	public List<DestinationWage> getDestinationwages() {
+		return destinationwages;
 	}
 
-	public void setIddw(DestinationWage iddw) {
-		this.iddw = iddw;
+	public void setDestinationwages(List<DestinationWage> destinationwages) {
+		this.destinationwages = destinationwages;
 	}
+
+	
+
 	
 	
 

@@ -12,9 +12,11 @@ public class Users implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDU")
 	private int idu;
 
 	private String username;
+	
 	private String password;
 
 	@ManyToOne

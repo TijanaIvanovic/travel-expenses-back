@@ -9,6 +9,7 @@ public class TripOfEmployee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDTOE")
 	private int idtoe;
 
 	@ManyToOne
@@ -45,5 +46,7 @@ public class TripOfEmployee implements Serializable {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+	
+	
 
 }

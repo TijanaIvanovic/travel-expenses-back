@@ -14,10 +14,7 @@ ALTER TABLE businesstrip
 ALTER TABLE businesstrip
     ADD CONSTRAINT businesstrip_tripstatus_fk FOREIGN KEY ( tripstatus_idts )
         REFERENCES tripstatus ( idts );    
- 
- ALTER TABLE businesstrip
-    ADD CONSTRAINT businesstrip_bill_fk FOREIGN KEY ( bill_idb )
-        REFERENCES bill ( idb );
+
 		
     
  ALTER TABLE destinationwage

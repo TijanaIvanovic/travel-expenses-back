@@ -10,6 +10,7 @@ public class TripStatus implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDTS")
 	private int idts;
 
 	private String name;

@@ -10,12 +10,15 @@ public class BillItem implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDBI")
 	private int idbi;
+	
 	private double cost;
+	
 	private String name;
 
 	@ManyToOne
-	@JoinColumn(name="bill_bill_id")
+	@JoinColumn(name="BILL_IDB")
 	private Bill bill;
 
 	public BillItem() {

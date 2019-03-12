@@ -12,6 +12,7 @@ public class Wage implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDW")
 	private int idw;
 
 	private double amount;

@@ -12,6 +12,7 @@ public class BusinessTrip implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDBT")
 	private int idbt;
 
 	@Temporal(TemporalType.DATE)
@@ -31,8 +32,6 @@ public class BusinessTrip implements Serializable {
 	@JoinColumn(name="tripstatus_idts")
 	private TripStatus tripstatus;
 
-	@OneToMany(mappedBy="businesstrip")
-	private List<TripOfEmployee> tripofemployees;
 
 	public BusinessTrip() {
 	}
@@ -86,14 +85,6 @@ public class BusinessTrip implements Serializable {
 
 	public void setTripstatus(TripStatus tripstatus) {
 		this.tripstatus = tripstatus;
-	}
-
-	public List<TripOfEmployee> getTripOfEmployees() {
-		return this.tripofemployees;
-	}
-
-	public void setTripofEmployees(List<TripOfEmployee> tripofemployees) {
-		this.tripofemployees = tripofemployees;
 	}
 
 

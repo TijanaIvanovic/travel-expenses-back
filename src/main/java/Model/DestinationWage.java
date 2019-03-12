@@ -12,19 +12,23 @@ public class DestinationWage implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDDW")
 	private int iddw;
 	
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
+	
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	
 	@ManyToOne
 	@JoinColumn(name="destination_idd")	
 	private Destination idd;
+	
 	@ManyToOne
 	@JoinColumn(name="wage_idw")	
 	private Wage idw;
+	
 	
 	public int getIddw() {
 		return iddw;

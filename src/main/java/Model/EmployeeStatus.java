@@ -1,6 +1,8 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -10,9 +12,13 @@ public class EmployeeStatus implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="IDES")
 	private int ides;
 
 	private String name;
+	
+	@OneToMany
+	private List<Employee> employees;
 
 	public EmployeeStatus() {
 	}
@@ -32,5 +38,15 @@ public class EmployeeStatus implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+	
+	
 
 }
