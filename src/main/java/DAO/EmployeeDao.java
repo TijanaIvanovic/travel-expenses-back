@@ -12,14 +12,6 @@ public class EmployeeDao {
 	
 	@Autowired
 	EmployeeRepository empRep;
-	//da li ovo moze ovako
-	
-	public Employee findOne(Integer ide) 
-	{
-		return empRep.findJustOne(ide);
-		
-	}
-
 	
 	public Employee save(Employee emp) 
 	{
@@ -27,7 +19,7 @@ public class EmployeeDao {
 		
 	}
 	
-	public List<Employee> findAll(Employee emp){
+	public List<Employee> findAll(){
 		return empRep.findAll();
 	}
 	

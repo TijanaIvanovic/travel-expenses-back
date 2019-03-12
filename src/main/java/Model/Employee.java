@@ -1,3 +1,5 @@
+
+
 package Model;
 
 import java.io.Serializable;
@@ -113,6 +115,13 @@ public class Employee implements Serializable {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [ide=" + ide + ", email=" + email + ", employeeStatus=" + employeeStatus + ", firstname="
+				+ firstname + ", lastname=" + lastname + ", user=" + user + ", role=" + role + ", bills=" + bills
+				+ ", tripofemployees=" + tripofemployees + "]";
 	}
 
 
