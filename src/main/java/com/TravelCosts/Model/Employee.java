@@ -76,13 +76,6 @@ public class Employee implements Serializable {
 		this.tripofemployees = tripofemployees;
 	}
 
-//	public List<Businesstrip> getBusinesstrip() {
-//		return businesstrip;
-//	}
-//
-//	public void setBusinesstrip(List<Businesstrip> businesstrip) {
-//		this.businesstrip = businesstrip;
-//	}
 
 	public Employeestatus getEmployeeStatus() {
 		return employeestatus;
@@ -92,11 +85,7 @@ public class Employee implements Serializable {
 		this.employeestatus = employeeStatus;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Employee [ide=" + ide + ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname
-//				+ ", employeestatus=" + employeestatus + ", tripofemployees=" + tripofemployees + "]";
-//	}
+
 
 
 	

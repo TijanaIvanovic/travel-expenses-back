@@ -14,23 +14,18 @@ import com.TravelCosts.Repository.TripOfEmployeeRepository;
 public class TripOfEmployeeDao {
 
 	@Autowired
-	TripOfEmployeeRepository toe;
-
+	TripOfEmployeeRepository toeRep;
 
 	
-	public Tripofemployee save(Tripofemployee t) 
+	public Tripofemployee save(Tripofemployee top) 
 	{
-		return toe.save(t);
+		return toeRep.save(top);
 		
 	}
 	
-	public List<Tripofemployee> findAll(Tripofemployee t){
-		return toe.findAll();
+	public List<Tripofemployee> findAll(){
+		return toeRep.findAll();
 	}
 	
-	public void delete (Tripofemployee t) 
-	{
-		 toe.delete(t);
-		
-	}
+
 }
