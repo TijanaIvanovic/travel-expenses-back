@@ -13,7 +13,6 @@ public class DestinationDao {
 	@Autowired
 	DestinationRepository dRep;
 
-
 	
 	public Destination save(Destination d) 
 	{
@@ -21,14 +20,8 @@ public class DestinationDao {
 		
 	}
 	
-	public List<Destination> findAll(Destination d){
+	public List<Destination> findAll(){
 		return dRep.findAll();
 	}
-	
-	public void delete (Destination d) 
-	{
-		 dRep.delete(d);
-		
-	}
-	
+
 }

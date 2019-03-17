@@ -12,24 +12,19 @@ import com.TravelCosts.Repository.BusinessTripRepository;
 public class BusinessTripDao {
 	
 	@Autowired
-	BusinessTripRepository bRep;
-
+	BusinessTripRepository btRep;
 
 	
 	public Businesstrip save(Businesstrip b) 
 	{
-		return bRep.save(b);
+		return btRep.save(b);
 		
 	}
 	
-	public List<Businesstrip> findAll(Businesstrip b){
-		return bRep.findAll();
+	public List<Businesstrip> findAll(){
+		return btRep.findAll();
 	}
 	
-	public void delete (Businesstrip b) 
-	{
-		 bRep.delete(b);
-		
-	}
+
 	
 }

@@ -24,11 +24,7 @@ public class EmployeeDao {
 		return empRep.findAll();
 	}
 	
-	public void delete (int id) 
-	{
-		 empRep.deleteById(id);;
-		
-	}
+
 	
 	
 }

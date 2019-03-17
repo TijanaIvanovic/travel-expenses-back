@@ -18,7 +18,7 @@ public class Employeestatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id	
-	@SequenceGenerator(name="empst_seq_gen", sequenceName="empst_seq", initialValue = 1)
+	@SequenceGenerator(name="empst_seq_gen", sequenceName="empst_seq", allocationSize =  1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="empst_seq_gen")
 	@Column(name="IDES")
 	private int ides;

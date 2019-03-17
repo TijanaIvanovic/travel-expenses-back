@@ -17,20 +17,15 @@ public class BillItemDao {
 	BillItemRepository BillItemRep;
 	
 	
-	public Billitem save(Billitem b) 
-	{
+	public Billitem save(Billitem b){		
 		return BillItemRep.save(b);
 		
 	}
 	
-	public List<Billitem> findAll(Billitem b){
+	public List<Billitem> findAll(){
 		return BillItemRep.findAll();
 	}
 	
-	public void delete (Billitem b) 
-	{
-		 BillItemRep.delete(b);
-		
-	}
+
 
 }

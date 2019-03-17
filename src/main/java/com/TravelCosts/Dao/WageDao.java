@@ -22,14 +22,9 @@ public class WageDao {
 		
 	}
 	
-	public List<Wage> findAll(Wage w){
+	public List<Wage> findAll(){
 		return wRep.findAll();
 	}
-	
-	public void delete (Wage w) 
-	{
-		wRep.delete(w);
-		
-	}
+
 	
 }

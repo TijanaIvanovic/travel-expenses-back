@@ -22,9 +22,6 @@ public class RoleService {
 		rDao.save(r);
 		
 	}
-	
-	public void deleteRole(Role r) {
-		rDao.delete(r);
-	}
+
 
 }

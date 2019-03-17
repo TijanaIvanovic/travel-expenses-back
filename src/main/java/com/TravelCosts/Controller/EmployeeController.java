@@ -15,25 +15,19 @@ import java.util.List;
 @RestController
 public class EmployeeController {	
 	@Autowired
-	EmployeeService emps;
+	EmployeeService eService;
 	
 	@GetMapping(path="employees")	
 	public List<Employee> getAllEmployees(){
-
-		return emps.listEmployees();	
+		return eService.findAll();	
 	}
 	
 	@PostMapping(path="employee")
-	public void createEmployee(@RequestBody Employee e) {
-		System.out.println("Hello" + e.toString());
-		emps.createEmp(e);
+	public void createNewEmployee(@RequestBody Employee e) {
+		eService.createEmployee(e);
 	}	
 	
-	@PostMapping(path="employeeupdate")
-	public void updateEmployee(@RequestBody Employee e) {
-		System.out.println("Hello" + e.toString());
-		emps.createEmp(e);
-	}	
+	
 
 }
 

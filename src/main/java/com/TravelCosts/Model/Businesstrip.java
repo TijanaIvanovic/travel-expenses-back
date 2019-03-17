@@ -17,7 +17,7 @@ public class Businesstrip implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="btrip_seq_gen", sequenceName="btrip_seq", initialValue =  1)	
+	@SequenceGenerator(name="btrip_seq_gen", sequenceName="btrip_seq",allocationSize =  1)	
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="btrip_seq_gen")
 	@Column(name="IDBT")
 	private int idbt;

@@ -8,24 +8,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.TravelCosts.Model.Role;
-import com.TravelCosts.Service.RoleService;
+import com.TravelCosts.Model.Bill;
+import com.TravelCosts.Service.BillService;
 
 @RestController
-public class RoleController {
+public class BillController {
+	
 	@Autowired
-	RoleService roleService;
+	BillService bService;
 	
-	@GetMapping(path="roles")	
-	public List<Role> getAllRoles(){
-		return roleService.listRoles();	
+	@GetMapping(path="bills")
+	public List<Bill> getAllBills(){
+		return bService.findAll();
 	}
 	
-	@PostMapping(path="role")
-	public void createRole(@RequestBody Role r) {
-		roleService.createRole(r);
-		
+	@PostMapping(path="bill")
+	public void createNewBill(@RequestBody Bill b) {
+		bService.createBill(b);
 	}
-
 
 }

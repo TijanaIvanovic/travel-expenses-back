@@ -22,16 +22,11 @@ public class BillDao {
 		
 	}
 	
-	public List<Bill> findAll(Bill b){
+	public List<Bill> findAll(){
 		return billRep.findAll();
 	}
 	
-	public void delete (Bill b) 
-	{
-		 billRep.delete(b);
-		
-	}
-	
+
 
 	
 }

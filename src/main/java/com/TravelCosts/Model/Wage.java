@@ -19,7 +19,7 @@ public class Wage implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="wage_seq_gen")
-	@SequenceGenerator(name="wage_seq_gen", sequenceName="wage_seq", initialValue = 1)	
+	@SequenceGenerator(name="wage_seq_gen", sequenceName="wage_seq", allocationSize=1)	
 	@Column(name="IDW")
 	private int idw;
 

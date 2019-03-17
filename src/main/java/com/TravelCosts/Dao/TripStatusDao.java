@@ -16,20 +16,16 @@ public class TripStatusDao {
 	TripStatusRepository tRep;
 	
 	
-	public Tripstatus save(Tripstatus t) 
+	public Tripstatus save(Tripstatus ts) 
 	{
-		return tRep.save(t);
+		return tRep.save(ts);
 		
 	}
 	
-	public List<Tripstatus> findAll(Tripstatus t){
+	public List<Tripstatus> findAll(){
 		return tRep.findAll();
 	}
 	
-	public void delete (Tripstatus t) 
-	{
-		 tRep.delete(t);
-		
-	}
+
 	
 }

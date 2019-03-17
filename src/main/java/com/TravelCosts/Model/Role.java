@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@SequenceGenerator(name = "role_seq_gen", sequenceName="role_seq", initialValue=1, allocationSize=1)
+	@SequenceGenerator(name = "role_seq_gen", sequenceName="role_seq",  allocationSize=1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="role_seq_gen")
 	@Column(name="IDR")
 	private int idr;

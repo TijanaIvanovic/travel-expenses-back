@@ -14,7 +14,7 @@ public class Tripofemployee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="toe_seq_gen", sequenceName="toe_seq", initialValue =  1)
+	@SequenceGenerator(name="toe_seq_gen", sequenceName="toe_seq", allocationSize =  1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="toe_seq_gen")
 	@Column(name="IDTOE")
 	private int idtoe;

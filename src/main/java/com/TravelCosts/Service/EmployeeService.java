@@ -15,16 +15,14 @@ public class EmployeeService {
 	private EmployeeDao empDao;
 	
 	
-	public List<Employee> listEmployees(){
+	public List<Employee> findAll(){
 		return empDao.findAll();
 	}
 	
-	public void createEmp(Employee e) {
+	public void createEmployee(Employee e) {
 		empDao.save(e);
 	}
 	
-	public void deleteEmployee(int id) {
-		empDao.delete(id);;
-	}
+
 
 }

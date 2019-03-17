@@ -17,15 +17,10 @@ public class DestinationWageDao {
 		
 	}
 	
-	public List<Destinationwage> findAll(Destinationwage dw){
+	public List<Destinationwage> findAll(){
 		return dwRep.findAll();
 	}
-	
-	public void delete (Destinationwage dw) 
-	{
-		dwRep.delete(dw);
-		
-	}
+
 	
 
 }

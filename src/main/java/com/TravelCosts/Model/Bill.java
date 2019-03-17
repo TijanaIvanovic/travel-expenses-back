@@ -15,12 +15,12 @@ public class Bill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id	
-	@SequenceGenerator(name="bill_seq_gen", sequenceName="bill_seq", initialValue = 1)
+	@SequenceGenerator(name="bill_seq_gen", sequenceName="bill_seq", allocationSize =  1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="bill_seq_gen")
 	@Column(name="IDB")
 	private int idb;	
 	
-	private double total;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="businesstrip_idbt", foreignKey=@ForeignKey(name="bill_businesstrip_fk"))
@@ -40,13 +40,6 @@ public class Bill implements Serializable {
 		this.idb = idb;
 	}
 	
-	public double getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
 
 	public Businesstrip getBusinesstrip() {
 		return this.businesstrip;

@@ -25,11 +25,6 @@ public class RoleDao {
 	public List<Role> findAll(){
 		return rRep.findAll();
 	}
-	
-	public void delete (Role r) 
-	{
-		 rRep.delete(r);
-		
-	}
+
 	
 }

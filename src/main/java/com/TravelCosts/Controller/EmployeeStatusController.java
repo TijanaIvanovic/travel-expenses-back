@@ -15,22 +15,18 @@ import com.TravelCosts.Service.EmployeestatusService;
 @RestController
 public class EmployeeStatusController {
 	@Autowired
-	EmployeestatusService empstService;
+	EmployeestatusService esService;
 	
 	@GetMapping(path="statuses")	
 	public List<Employeestatus> getAllStatuses(){
-		return empstService.listEmployeestatuses();	
+		return esService.listEmployeestatuses();	
 	}
 	
 	@PostMapping(path="status")
 	public void createRole(@RequestBody Employeestatus empst) {
-		empstService.createEmployeeStatus(empst);
+		esService.createEmployeeStatus(empst);
 		
 	}
-	
-	@PostMapping(path="statusdel")
-	public void deleteRole(@RequestBody Employeestatus empst) {
-		empstService.deleteEmployeeStatus(empst);
-	}
+
 
 }

@@ -10,8 +10,7 @@ import com.TravelCosts.Model.Employeestatus;
 @Service
 public class EmployeestatusService {
 	@Autowired
-	private EmployeeStatusDao empstDao;
-	
+	private EmployeeStatusDao empstDao;	
 	
 	public List<Employeestatus> listEmployeestatuses(){
 		return empstDao.findAll();
@@ -19,10 +18,6 @@ public class EmployeestatusService {
 	
 	public void createEmployeeStatus(Employeestatus emps) {
 		empstDao.save(emps);
-	}
-	
-	public void deleteEmployeeStatus(Employeestatus emps) {
-		empstDao.delete(emps);
 	}
 
 }

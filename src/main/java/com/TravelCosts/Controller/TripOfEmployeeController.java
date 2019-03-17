@@ -16,18 +16,16 @@ import com.TravelCosts.Service.TripOfEmployeeService;
 @RestController
 public class TripOfEmployeeController {
 	@Autowired
-	TripOfEmployeeService tops;
+	TripOfEmployeeService topService;
 	
 	@GetMapping(path="tripsofemployee")	
 	public List<Tripofemployee> getAllTripsOfEmployee(){
-
-		return tops.listTripsOfEmployee();	
+		return topService.listTripsOfEmployee();	
 	}
 	
 	@PostMapping(path="tripofemployee")
 	public void createEmployee(@RequestBody Tripofemployee top) {
-		System.out.println("Hello" + top.toString());
-		tops.createTop(top);
+		topService.createTop(top);
 	}	
 	
 

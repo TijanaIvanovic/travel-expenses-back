@@ -25,9 +25,5 @@ public class EmployeeStatusDao {
 		return empStat.findAll();
 	}
 	
-	public void delete (Employeestatus emp) 
-	{
-		 empStat.delete(emp);
-		
-	}
+
 }
