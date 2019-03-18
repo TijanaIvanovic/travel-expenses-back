@@ -23,6 +23,10 @@ public class EmployeeService {
 		empDao.save(e);
 	}
 	
+	public Employee getEmployeeByName(String fname, String lname) {
+		return empDao.getEmployeeByName(fname, lname);
+	}
+	
 
 
 }

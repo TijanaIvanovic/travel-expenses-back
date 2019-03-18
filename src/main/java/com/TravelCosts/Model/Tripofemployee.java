@@ -20,11 +20,11 @@ public class Tripofemployee implements Serializable {
 	private int idtoe;
 
 	@ManyToOne
-	@JoinColumn(name="businesstrip_idbt", foreignKey=@ForeignKey(name="tripofemployee_businestrip_fk"))
+	@JoinColumn(name="BUSINESSTRIP_IDBT", foreignKey=@ForeignKey(name="tripofemployee_businesstrip_fk"))
 	private Businesstrip businesstrip;
 
 	@ManyToOne
-	@JoinColumn(name="employee_ide", foreignKey=@ForeignKey(name="tripofemployee_employee_fk"))
+	@JoinColumn(name="EMPLOYEE_IDE")
 	private Employee employee;
 
 	public Tripofemployee() {
@@ -39,20 +39,22 @@ public class Tripofemployee implements Serializable {
 	}
 
 	public Businesstrip getBusinesstrip() {
-		return this.businesstrip;
+		return businesstrip;
 	}
 
-	public void setBusinesstrip(Businesstrip busineestrip) {
+	public void setBusinesstrip(Businesstrip businesstrip) {
 		this.businesstrip = businesstrip;
 	}
 
 	public Employee getEmployee() {
-		return this.employee;
+		return employee;
 	}
 
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+
+
 	
 	
 

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TravelCosts.Model.Tripstatus;
@@ -21,7 +22,7 @@ public class TripStatusController {
 	}
 	
 	@PostMapping(path="tripstatus")
-	public void createNewTripStatus(Tripstatus ts) {
+	public void createNewTripStatus(@RequestBody Tripstatus ts) {
 		tsService.createTripStatus(ts);
 	}
 }

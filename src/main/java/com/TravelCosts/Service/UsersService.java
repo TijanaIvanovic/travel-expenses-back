@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.TravelCosts.Dao.UsersDao;
+import com.TravelCosts.Model.Employee;
 import com.TravelCosts.Model.Users;
 
 @Service
@@ -19,6 +20,10 @@ public class UsersService {
 	
 	public void createUser(Users u) {
 		uDao.save(u);
+	}
+	
+	public Users getUser(String username, String password) {
+		return uDao.getUser(username, password);
 	}
 
 }

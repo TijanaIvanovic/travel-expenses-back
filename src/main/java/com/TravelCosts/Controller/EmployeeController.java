@@ -1,10 +1,12 @@
 package com.TravelCosts.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TravelCosts.Model.Employee;
@@ -27,6 +29,11 @@ public class EmployeeController {
 		eService.createEmployee(e);
 	}	
 	
+//	@GetMapping(path="byname")
+//	public Employee getEmployeeByName(@RequestParam String fname, @RequestParam String lname) {
+//		return eService.getEmployeeByName(fname, lname);
+//		
+//	}
 	
 
 }

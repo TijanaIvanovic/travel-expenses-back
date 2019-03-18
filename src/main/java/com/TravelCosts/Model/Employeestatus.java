@@ -27,8 +27,8 @@ public class Employeestatus implements Serializable {
 	
 	@Autowired
 	
-	//@OneToMany(fetch = FetchType.LAZY, mappedBy="employeestatus")
-	//private List<Employee> employees;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="employeestatus")
+	private List<Employee> employees;
 
 	public Employeestatus() {
 	}

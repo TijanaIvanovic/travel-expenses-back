@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TravelCosts.Model.Destinationwage;
@@ -22,7 +23,7 @@ public class DestinationWageController {
 	}
 	
 	@PostMapping(path="destinationwage")
-	public void createNewDestinationWage(Destinationwage dw) {
+	public void createNewDestinationWage(@RequestBody Destinationwage dw) {
 		dwService.createDestinationWage(dw);
 	}
 

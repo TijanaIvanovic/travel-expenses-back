@@ -32,16 +32,17 @@ public class Businesstrip implements Serializable {
 	private List<Bill> bills;
 
 	@ManyToOne
-	@JoinColumn(name="destination_idd", foreignKey=@ForeignKey(name="businesstrip_destination_fk"))
+	@JoinColumn(name="DESTINATION_IDD", foreignKey=@ForeignKey(name="businesstrip_destination_fk"))
 	private Destination destination;
 
 	@ManyToOne
-	@JoinColumn(name="tripstatus_idts", foreignKey=@ForeignKey(name="businesstrip_tripstatus_fk"))
+	@JoinColumn(name="TRIPSTATUS_IDTS", foreignKey=@ForeignKey(name="businesstrip_tripstatus_fk"))
 	private Tripstatus tripstatus;
 
 	
 	@OneToMany(mappedBy="businesstrip")
-	private List<Tripofemployee> tripofemployees;
+	
+	private List<Tripofemployee> tripsofemployees;
 
 
 	public Businesstrip() {
@@ -98,13 +99,15 @@ public class Businesstrip implements Serializable {
 		this.tripstatus = tripstatus;
 	}
 
-	public List<Tripofemployee> getTripofemployees() {
-		return tripofemployees;
+	public List<Tripofemployee> getTripsofemployees() {
+		return tripsofemployees;
 	}
 
-	public void setTripofemployees(List<Tripofemployee> tripofemployees) {
-		this.tripofemployees = tripofemployees;
+	public void setTripsofemployees(List<Tripofemployee> tripsofemployees) {
+		this.tripsofemployees = tripsofemployees;
 	}
+
+
 	
 
 

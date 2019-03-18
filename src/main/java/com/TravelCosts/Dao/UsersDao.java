@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.TravelCosts.Model.Employee;
 import com.TravelCosts.Model.Users;
 import com.TravelCosts.Repository.UsersRepository;
 
@@ -24,6 +25,9 @@ public class UsersDao {
 	public List<Users> findAll(){
 		return uRep.findAll();
 	}
-
+	
+	public Users getUser(String username, String password) {
+		return uRep.getUser(username, password);
+	}
 	
 }

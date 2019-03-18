@@ -25,7 +25,8 @@ public class Employee implements Serializable {
 	private String lastname;
 
 	@ManyToOne
-	@JoinColumn(name="employeestatus_ides", foreignKey=@ForeignKey(name="employee_employeestatus_fk"))
+	@JoinColumn(name="EMPLOYEESTATUS_IDES", foreignKey=@ForeignKey(name="employee_employeestatus_fk"))
+
 	private Employeestatus employeestatus;
 
 	@OneToMany(mappedBy="employee")

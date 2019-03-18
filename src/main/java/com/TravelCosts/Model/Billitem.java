@@ -17,7 +17,7 @@ public class Billitem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="billitem_seq_gen", sequenceName="billitem_seq", initialValue =  1)
+	@SequenceGenerator(name="billitem_seq_gen", sequenceName="billitem_seq", allocationSize =  1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE,generator="billitem_seq_gen")	
 	@Column(name="IDBI")
 	private int idbi;

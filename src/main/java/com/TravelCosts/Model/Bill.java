@@ -21,9 +21,8 @@ public class Bill implements Serializable {
 	private int idb;	
 	
 	
-	
 	@ManyToOne
-	@JoinColumn(name="businesstrip_idbt", foreignKey=@ForeignKey(name="bill_businesstrip_fk"))
+	@JoinColumn(name="BILL_IDBT", foreignKey=@ForeignKey(name="bill_businesstrip_fk"))
 	private Businesstrip businesstrip;
 	
 	@OneToMany(mappedBy="bill")
@@ -39,16 +38,14 @@ public class Bill implements Serializable {
 	public void setIdb(int idb) {
 		this.idb = idb;
 	}
-	
 
 	public Businesstrip getBusinesstrip() {
-		return this.businesstrip;
+		return businesstrip;
 	}
 
-	public void setBusineestrip(Businesstrip busineestrip) {
+	public void setBusinesstrip(Businesstrip businesstrip) {
 		this.businesstrip = businesstrip;
 	}
-
 
 	public List<Billitem> getBillItems() {
 		return this.Billitems;

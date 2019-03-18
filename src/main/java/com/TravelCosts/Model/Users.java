@@ -1,14 +1,20 @@
 package com.TravelCosts.Model;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
-import java.math.BigDecimal;
-import java.util.Date;
-import java.sql.Timestamp;
 
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
@@ -28,9 +34,13 @@ public class Users implements Serializable {
 	private String password;
 
 	@ManyToOne
-	@JoinColumn(name="role_idr", foreignKey=@ForeignKey(name="users_role_fk"))
+	@JoinColumn(name="ROLE_IDR", foreignKey=@ForeignKey(name="users_role_fk"))
 	private Role role;
-
+	
+	@OneToOne
+	@JoinColumn(name="EMPLOYEE_IDE")
+	private Employee employee;
+	
 	public int getIdu() {
 		return idu;
 	}
@@ -61,6 +71,14 @@ public class Users implements Serializable {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 

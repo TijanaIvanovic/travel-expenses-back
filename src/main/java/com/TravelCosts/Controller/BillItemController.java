@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TravelCosts.Model.Billitem;
@@ -22,7 +23,7 @@ public class BillItemController {
 	}
 	
 	@PostMapping(path="billitem")
-	public void createNewBillitem(Billitem bi) {
+	public void createNewBillitem(@RequestBody Billitem bi) {
 		biService.createBillItem(bi);
 	}
 

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.TravelCosts.Model.Employee;
 import com.TravelCosts.Model.Tripofemployee;
 import com.TravelCosts.Repository.TripOfEmployeeRepository;
 
@@ -27,5 +28,6 @@ public class TripOfEmployeeDao {
 		return toeRep.findAll();
 	}
 	
+
 
 }

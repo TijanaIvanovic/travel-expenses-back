@@ -24,7 +24,8 @@ public class TripOfEmployeeController {
 	}
 	
 	@PostMapping(path="tripofemployee")
-	public void createEmployee(@RequestBody Tripofemployee top) {
+	public void createTripOfEmployee(@RequestBody Tripofemployee top) {
+		System.out.println(top.getBusinesstrip().getIdbt());
 		topService.createTop(top);
 	}	
 	

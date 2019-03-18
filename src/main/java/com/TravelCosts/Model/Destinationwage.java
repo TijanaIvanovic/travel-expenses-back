@@ -31,12 +31,12 @@ public class Destinationwage implements Serializable {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="destination_idd", foreignKey=@ForeignKey(name="destinationwage_destination_fk"))	
+	@JoinColumn(name="DESTINATION_IDD" )//, foreignKey=@ForeignKey(name="destinationwage_destination_fk"))	
 	private Destination destination;
 	
 	@ManyToOne
-	@JoinColumn(name="wage_idw", foreignKey=@ForeignKey(name="destinationwage_wage_fk"))	
-	private Wage idw;
+	@JoinColumn(name="WAGE_IDW", foreignKey=@ForeignKey(name="destinationwage_wage_fk"))
+	private Wage wage;
 	
 	
 	public int getIddw() {
@@ -57,17 +57,17 @@ public class Destinationwage implements Serializable {
 	public void setEndDate(Date enddate) {
 		this.enddate = enddate;
 	}
-	public Destination getIdd() {
+	public Destination getDestination() {
 		return destination;
 	}
-	public void setIdd(Destination destination) {
+	public void setDestination(Destination destination) {
 		this.destination = destination;
 	}
-	public Wage getIdw() {
-		return idw;
+	public Wage getWage() {
+		return wage;
 	}
-	public void setIdw(Wage idw) {
-		this.idw = idw;
+	public void setWage(Wage wage) {
+		this.wage = wage;
 	}
 	
 	
