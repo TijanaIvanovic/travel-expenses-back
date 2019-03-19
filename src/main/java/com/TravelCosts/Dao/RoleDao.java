@@ -25,6 +25,9 @@ public class RoleDao {
 	public List<Role> findAll(){
 		return rRep.findAll();
 	}
-
+	
+	public Role getRoleByName(String name) {
+		return rRep.getRoleByName(name);
+	}
 	
 }

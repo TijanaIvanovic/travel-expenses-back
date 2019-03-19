@@ -22,6 +22,10 @@ public class RoleService {
 		rDao.save(r);
 		
 	}
+	
+	public Role getRoleByName(String name) {
+		return rDao.getRoleByName(name);
+	}
 
 
 }
